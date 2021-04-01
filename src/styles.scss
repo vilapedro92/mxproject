@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin     : 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container1 {
+  padding-top   : 5px;
+  margin-bottom : 20px;
+  padding-bottom: 40px;
+}
+
+.container2 {
+  width      : 90%;
+  margin-left: 65px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width    : 100%;
+}
+
+.head {
+  width          : 90%;
+  margin-left    : 65px;
+  display        : flex;
+  margin-top     : 10px;
+  margin-bottom  : 10px;
+  display        : flex;
+  justify-content: space-between;
+}
+
+h2 {
+  color      : #11a58b;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size  : x-large;
+}
+
+mat-form-field {
+  background-color: #11a58b;
+  border-radius   : 0.3rem;
+}
+
+mat-label {
+  color: white;
+}

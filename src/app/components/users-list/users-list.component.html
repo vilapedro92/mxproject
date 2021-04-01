@@ -1,0 +1,51 @@
+<div class="container1">
+  <div class="head">
+    <h2>Users List</h2>
+  </div>
+  <div class="container2">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Name" #input>
+    </mat-form-field>
+
+    <mat-progress-bar *ngIf="search" mode="indeterminate"></mat-progress-bar>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="options">
+        <th mat-header-cell *matHeaderCellDef> Details </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="albums(element.id)" matTooltip="View Albums" matTooltipPosition="above"
+            matTooltipHideDelay="100">
+            <mat-icon style="color: #007965!important;" class="iconpos">photo_album</mat-icon>
+          </button>
+          <button mat-button (click)="posts(element.id)" matTooltip="View Posts" matTooltipPosition="above"
+          matTooltipHideDelay="100">
+          <mat-icon style="color: #007965!important;" class="iconpos">contact_page</mat-icon>
+        </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+
+  </div>
+</div>
